@@ -1,0 +1,65 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  background: black;
+}
+
+.slideshow {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow .slide {
+  height: 100%;
+  width: 100%;
+  display: none;
+  object-fit: contain;
+}
+
+.slideshow .slide.active {
+  display: block;
+}
+
+.slideshow .slide-button {
+  background: #171717;
+  border: 1px solid white;
+  color: white;
+  font-size: 2em;
+  outline: none;
+  padding: 1em 0.5em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+}
+
+.slideshow .slide-button:hover {
+  background: #8e8e8e;
+}
+
+.slideshow .slide-button:active {
+  background: #171717;
+}
+
+.slideshow .slide-button.previous {
+  left: 0;
+}
+
+.slideshow .slide-button.previous::after {
+  content: '❮';
+}
+
+.slideshow .slide-button.next {
+  right: 0;
+}
+
+.slideshow .slide-button.next::after {
+  content: '❯';
+}

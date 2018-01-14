@@ -1,0 +1,28 @@
+{
+  "name": "vanillajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@neutrinojs/jest": "^9.0.0-rc.0",
+    "@neutrinojs/web": "^9.0.0-rc.0",
+    "jest": "^22.4.4",
+    "neutrino": "^9.0.0-rc.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "redux": "^4.0.0"
+  }
+}
