@@ -1,15 +1,14 @@
 const selectProductsState = state => state.products
 
-// TODO: Implement
 export const selectProductsByCategory = (state, categoryId) => {
   const products = selectProductsState(state)
 
-  throw new Error('Not implemented')
+  return Object.values(products.byId)
+	    .filter(p => p.categoryId === categoryId);
 }
 
-// TODO: Implement
 export const selectProductDetailsById = (state, productId) => {
   const products = selectProductsState(state)
 
-  throw new Error('Not implemented')
+  return products.byId[productId];
 }

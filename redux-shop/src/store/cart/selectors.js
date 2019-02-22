@@ -1,13 +1,12 @@
 import { selectProductDetailsById } from '../products/selectors'
 
-/**
- * TODO: Implement and use selectProductDetailsById to retrieve a product
- * 
- * expected result:
- * [
- *  { product: { id: number, ... }, quantity: number }
- * ]
- */
 export const selectCartProductsDetails = (state) => {
-  throw new Error('Not implemented');
-}
+  const { quantityByProductId } = state.cart;
+
+  return Object.keys(quantityByProductId)
+    .map(productId => Number(productId))
+    .map(productId => ({
+      product: selectProductDetailsById(state, productId),
+      quantity: quantityByProductId[productId]
+    }));
+} 

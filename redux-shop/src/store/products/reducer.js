@@ -1,8 +1,20 @@
 import products from '../products.json'
 
-// TODO: Implement
 const getNormalizedProductsById = (products) => {
-  throw new Error('Not implemented');
+  return products.reduce(
+    (byId, product) => ({
+      ...byId,
+      [product.id]: {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        image: product.image,
+        categoryId: product.category.id,
+      }
+    }),
+    {}
+  )
 }
 
 const initialState = {
