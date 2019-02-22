@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
-import { selectCategoryById, selectProductsByCategory } from '../store/shop/selectors'
+import { selectCategoryById } from '../store/categories/selectors'
+import { selectProductsByCategory } from '../store/products/selectors';
 
 import ProductList from '../components/ProductList'
 

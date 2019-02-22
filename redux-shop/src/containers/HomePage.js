@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
-import { selectCategories } from '../store/shop/selectors'
-
+import { selectCategories } from '../store/categories/selectors'
+	
 import CategoryList from '../components/CategoryList'
 
 const mapStateToProps = (state) => {

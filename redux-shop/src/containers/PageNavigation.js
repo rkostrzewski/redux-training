@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter, matchPath } from 'react-router';
 
-import { selectCategories, selectProductDetailsById } from '../store/shop/selectors';
+import { selectCategories } from '../store/categories/selectors';
+import { selectProductDetailsById } from '../store/products/selectors';
 import routes from '../routes';
 
 import NavigationMenu from '../components/NavigationMenu';
@@ -37,7 +38,7 @@ const getActiveCategoryForRoute = (state, history) => {
     const productId = Number(productMatch.params.productId)
     const product = selectProductDetailsById(state, productId)
 
-    return product && product.category.id
+    return product && product.categoryId
   }
 
   return undefined;
@@ -53,7 +54,7 @@ const getBackNavigationLinkForRoute = (state, history) => {
     const productId = Number(productMatch.params.productId)
     const product = selectProductDetailsById(state, productId)
 
-    return product ? `/category/${product.category.id}` : '/'
+    return product ? `/category/${product.categoryId}` : '/'
   }
 
   return undefined;

@@ -5,7 +5,6 @@ import {
   REMOVE_PRODUCT_FROM_CART,
 } from './constants';
 
-// TODO: Implement actions
 export const addProductToCart = (productId, quantity) => {
   return {
     type: ADD_PRODUCT_TO_CART,

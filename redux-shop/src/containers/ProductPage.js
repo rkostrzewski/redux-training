@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { selectProductDetailsById } from '../store/shop/selectors'
+import { selectProductDetailsById } from '../store/products/selectors';
 import { addProductToCart } from '../store/cart/actions'
 
 import ProductDetails from '../components/ProductDetails'
