@@ -1,12 +1,7 @@
-1. Został dodany nowy middleware `redux-thunk` zapoznaj się w jaki sposób poprzez zmiany w pliku `src/store`
-2. Został dodany nowy typ `Dispatch`, który będzie wykorzystywany w kodzie w pliku `src/modules/types`
-3. komponent App został przeniesiony do `src/components/App` i zamiast niego jest opakowaywany przez kontener w `src/containers/AppContainer`. `App` teraz ładuje produkty i wyświetla wiadomość kiedy nie udało się ich załadować
-4. Zaimplmentuj asynchroniczną akcję ładowania produktów i zapisywania ich w stanie:
-- `src/modules/products/actions.js`
-- `src/modules/products/constants.js`
-- `src/modules/products/reducer.js`
-- `src/modules/categories/reducer.js`
-
-Nie zapomnij dodać obsługi wyciągania kategorii z produktów po załadowaniu.
-
-W przypadku typów akcji wywoływanych przez thunki można stosować konwencję `XXX_STARTED`, `XXX_SUCCESS`, `XXX_FAILURE` (np. `LOAD_PRODUCTS_STARTED`)
+1. Został dodany nowy middleware `redux-saga` zapoznaj się w jaki sposób poprzez zmiany w pliku `src/store`
+2. Ładowanie produktów zostało zmienione i teraz odbywa się przy użyciu sagi, zapoznaj się ze zmianami w plikach `src/store/products/actions` i `src/store/products/saga`
+3. Zaimplementuj nową funkcjonalność, która pozwala na przypominanie użytkownikowi na skończenie zakupów.
+- Zostałą dodana nowa akcja `Checkout` do pliku `src/store/cart/actions`, która jest wywoływana kiedy użytkownik naciśnie przycisk `Checkout` na stronie koszyka
+- Dodaj nową logikę: kiedy użytkownik doda conajmniej trzy różne produkty do koszyka i po 30 sekundach nie naciśnie przycisku Checkout wyświetl notyfikację
+- napisz sagę, która realizuje powyższe w pliku `src/store/cart/saga` przy użyciu funkcji `notifyProductsAddedToCartWithoutCheckout` do wyświetlania notyfikacji
+- Podpowiedź: możesz użyć `take`, `race`, `delay

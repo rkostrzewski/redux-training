@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router';
 
 import { selectProductsState } from '../store/products/selectors';
-import { loadProducts } from '../store/products/actions';
+import { loadProductsRequested } from '../store/products/actions';
 
 import App from '../components/App'
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispathToProps = {
-  loadProducts,
+  loadProducts: loadProductsRequested,
 }
 
 export default withRouter(

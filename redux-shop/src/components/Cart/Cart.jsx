@@ -12,6 +12,7 @@ const Cart = ({
   increaseQuantity,
   decreaseQuantity,
   removeProduct,
+  checkout,
 }) => {
   if(!products.length) {
     return (
@@ -35,7 +36,7 @@ const Cart = ({
           />
         ))
       }
-      <Button as={Link} to='/checkout' className={styles.checkout}>
+      <Button as={Link} onClick={checkout} to='/checkout' className={styles.checkout}>
         Checkout
       </Button>
     </div>
@@ -50,6 +51,7 @@ Cart.propTypes = {
   increaseQuantity: PropTypes.func.isRequired,
   decreaseQuantity: PropTypes.func.isRequired,
   removeProduct: PropTypes.func.isRequired,
+  checkout: PropTypes.func.isRequired,
 }
 
 export default Cart

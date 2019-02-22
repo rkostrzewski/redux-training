@@ -3,6 +3,7 @@ import {
   INCREASE_PRODUCT_QUANTITY,
   DECREASE_PRODUCT_QUANTITY,
   REMOVE_PRODUCT_FROM_CART,
+  CHECKOUT,
 } from './constants';
 
 export const addProductToCart = (productId, quantity) => {
@@ -33,3 +34,7 @@ export const removeProductFromCart = (productId) => {
     productId
   }
 }
+
+export const checkout = () => ({
+  type: CHECKOUT
+})

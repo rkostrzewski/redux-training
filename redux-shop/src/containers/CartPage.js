@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { selectCartProductsDetails } from '../store/cart/selectors'
-import { increaseProductQuantity, decreaseProductQuantity, removeProductFromCart } from '../store/cart/actions'
+import { increaseProductQuantity, decreaseProductQuantity, removeProductFromCart, checkout } from '../store/cart/actions'
 
 import Cart from '../components/Cart'
 
@@ -26,6 +26,7 @@ const mapDispatchToProps = {
   increaseQuantity: increaseProductQuantity,
   decreaseQuantity: decreaseProductQuantity,
   removeProduct: removeProductFromCart,
+  checkout,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)
