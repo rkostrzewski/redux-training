@@ -1,4 +1,4 @@
-const selectProductsState = state => state.products
+export const selectProductsState = state => state.products
 
 export const selectProductsByCategory = (state, categoryId) => {
   const products = selectProductsState(state)

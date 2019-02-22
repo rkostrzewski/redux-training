@@ -1,4 +1,3 @@
-import products from '../products.json'
 
 const getNormalizedCategoriesById = (products) => {
   return products.reduce(
@@ -22,7 +21,7 @@ const initialState = {
    *   [categoryId]: { id: number, name: string, ... }
    * }
    */
-  byId: getNormalizedCategoriesById(products),
+  byId: {},
 };
 
 const reducer = (state = initialState, action) => {
